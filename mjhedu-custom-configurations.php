@@ -69,7 +69,7 @@ function mjhedu_create_post_types() {
     	'parent_item_colon' => '',
     	'menu_name' => 'Lesson Plans',
     );
-	register_post_type( 'lesson', array(
+	register_post_type( 'lessons', array(
 		'labels' => $lesson_labels,
         'menu_icon' => 'dashicons-clipboard',
 		'has_archive' => true,
@@ -77,7 +77,7 @@ function mjhedu_create_post_types() {
 		'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail','page-attributes' ),
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
-		'rewrite' => array( 'slug' => 'lesson' ),
+		'rewrite' => array( 'slug' => 'lessons' ),
 		'menu_position' => 5
 		)
 	);
@@ -108,6 +108,6 @@ function register_lesson_category(){
 		'rewrite'           => array( 'slug' => 'lesson-category' ),
 	);
 
-	register_taxonomy( 'lesson_category', array( 'lesson' ), $args );
+	register_taxonomy( 'lesson_category', array( 'lessons' ), $args );
 }
 ?>
