@@ -1,0 +1,71 @@
+{
+    "key": "group_5bd7382fba900",
+    "title": "Media Resources: Films",
+    "fields": [
+        {
+            "key": "field_5bd7382fbd198",
+            "label": "Select Films",
+            "name": "select_films",
+            "type": "relationship",
+            "instructions": "Note: you can add or edit films under the Media Resources section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "media_resources"
+            ],
+            "taxonomy": [
+                "media_resources_category:films"
+            ],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "survivor_resources"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "resource_category:media-resources"
+            }
+        ]
+    ],
+    "menu_order": 23,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1540833665
+}

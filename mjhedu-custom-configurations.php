@@ -48,6 +48,7 @@ function mjhedu_create_post_types() {
 		'menu_position' => 5
 		)
 	);
+    //End lesson plans
 
     // Register timeline content type
     $timeline_labels = array(
@@ -77,8 +78,10 @@ function mjhedu_create_post_types() {
         'menu_position' => 6
         )
     );
-    //CREATE TIMELINE TAXONOMY
+    //Create timline taxonomy
     register_timeline_category();
+    //End timeline
+
 
 
     // Register Survivor Stories content type
@@ -109,9 +112,13 @@ function mjhedu_create_post_types() {
         'menu_position' => 7
         )
     );
-    //CREATE SURVIVORS TAXONOMY
+    //Create survivor stories taxonomy, survivor story taxonomy is a list of survivors
     register_survivor_name();
+    //End survivor stories
 
+
+
+    //Create Survivor Resources CPT
     $survivor_resources_labels = array(
         'name' => 'Survivor Resources',
         'singular_name' => 'Survivor Resources',
@@ -139,8 +146,11 @@ function mjhedu_create_post_types() {
         'menu_position' => 7
         )
     );
-    //CREATE SURVIVORS TAXONOMY
+    //Create survivor resources taxonomy
     register_resources_taxonomy();
+    //End survivor resources CPT
+
+
 
     // Register Glossary CPT
     $glossary_labels = array(
@@ -169,6 +179,38 @@ function mjhedu_create_post_types() {
         'rewrite' => array( 'slug' => 'glossary' )
         )
     );
+    //End glossary CPT
+
+
+     // Register Media Resources (Book, Films, Websites) CPT
+    $media_resources_labels = array(
+        'name' => 'Media Resources',
+        'singular_name' => 'Media Resource',
+        'add_new' => 'Add Media Resource',
+        'add_new_item' => 'Add Media Resource',
+        'edit_item' => 'Edit Media Resource',
+        'new_item' => 'New Media Resource',
+        'all_items' => 'Media Resources',
+        'view_item' => 'View Media Resource',
+        'search_items' => 'Search Media Resources',
+        'not_found' =>  'No Media Resources Found',
+        'not_found_in_trash' => 'No Media Resources Found in Trash', 
+        'parent_item_colon' => '',
+        'menu_name' => 'Media Resources',
+    );
+    register_post_type( 'media_resources', array(
+        'labels' => $media_resources_labels,
+        'has_archive' => false,
+        'public' => true,
+        'supports' => array( 'title', 'custom-fields'),
+        'exclude_from_search' => true,
+        'capability_type' => 'post',
+        'show_in_menu' => 'edit.php?post_type=survivor_resources',
+        'rewrite' => array( 'slug' => 'media-resources' )
+        )
+    );
+    register_media_resources_taxonomy();
+    //End media resources
 
 }
 add_action( 'init', 'mjhedu_create_post_types' );
@@ -283,6 +325,33 @@ function register_resources_taxonomy(){
     );
 
     register_taxonomy( 'resource_category', array( 'survivor_resources' ), $args );
+}
+
+//Media resources taxonomy
+function register_media_resources_taxonomy(){
+    // Add new taxonomy, make it non-hierarchical
+    $labels = array(
+        'name'              => _x( 'Media Categories', 'taxonomy general name', 'sage' ),
+        'singular_name'     => _x( 'Media Category', 'taxonomy singular name', 'sage' ),
+        'search_items'      => __( 'Search Media Categories', 'sage' ),
+        'all_items'         => __( 'All Media Categories', 'sage' ),
+        'edit_item'         => __( 'Edit Media Category', 'sage' ),
+        'update_item'       => __( 'Update Media Category', 'sage' ),
+        'add_new_item'      => __( 'Add Media Category', 'sage' ),
+        'new_item_name'     => __( 'New Media Category', 'sage' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => false,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'media-type' ),
+    );
+
+    register_taxonomy( 'media_resources_category', array( 'media_resources' ), $args );
 }
 
 // END CUSTOM TAXONOMIES ////////////////////////////////////////
@@ -443,6 +512,42 @@ function filter_resources_filter( $post_type, $which ) {
 }
 add_action( 'restrict_manage_posts', 'filter_resources_filter' , 10, 2);
 
+//ADD FILTER TO Media Resources CPT
+function filter_by_media_cat( $post_type, $which ) {
+    // Apply this only on a specific post types
+    if ( 'media_resources' !== $post_type )
+        return;
+
+    // A list of taxonomy slugs to filter by
+    $taxonomies = array( 'media_resources_category');
+
+    foreach ( $taxonomies as $taxonomy_slug ) {
+
+        // Retrieve taxonomy data
+        $taxonomy_obj = get_taxonomy( $taxonomy_slug );
+        $taxonomy_name = $taxonomy_obj->labels->name;
+
+        // Retrieve taxonomy terms
+        $terms = get_terms( $taxonomy_slug );
+
+        // Display filter HTML
+        echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
+        echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $taxonomy_name ) . '</option>';
+        foreach ( $terms as $term ) {
+            printf(
+                '<option value="%1$s" %2$s>%3$s</option>', //(%4$s)
+                $term->slug,
+                ( ( isset( $_GET[$taxonomy_slug] ) && ( $_GET[$taxonomy_slug] == $term->slug ) ) ? ' selected="selected"' : '' ),
+                $term->name,
+                $term->count
+            );
+        }
+        echo '</select>';
+    }
+
+}
+add_action( 'restrict_manage_posts', 'filter_by_media_cat' , 10, 2);
+
 // END FILTER BY CUSTOM TAXONOMY ///////////////////////////////////
 /******************************************************************/
 
@@ -489,7 +594,8 @@ function remove_comments() {
 function wpse_139269_term_radio_checklist( $args ) {
     if ( (! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'survivors') ||
          (! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'timeline_category') ||
-         (! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'resource_category')) {
+         (! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'resource_category') ||
+         (! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'media_resources_category')) {
         if ( empty( $args['walker'] ) || is_a( $args['walker'], 'Walker' ) ) { // Don't override 3rd party walkers.
             if ( ! class_exists( 'WPSE_139269_Walker_Category_Radio_Checklist' ) ) {
                 /**
@@ -537,7 +643,9 @@ function my_custom_admin_css() {
     .post-type-lessons #posts-filter .tablenav select#filter-by-date,
     .post-type-lessons #posts-filter .tablenav #post-query-submit,
 
-    .post-type-survivor_resources #posts-filter .tablenav select#filter-by-date
+    .post-type-survivor_resources #posts-filter .tablenav select#filter-by-date,
+
+    .post-type-media_resources #posts-filter .tablenav select#filter-by-date
     {
         display:none;
     }

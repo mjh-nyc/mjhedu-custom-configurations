@@ -1,0 +1,150 @@
+{
+    "key": "group_5bd64ac1e1fbe",
+    "title": "Geography Quiz Answers",
+    "fields": [
+        {
+            "key": "field_5bd64b06a473a",
+            "label": "Quiz answer",
+            "name": "quiz_answer",
+            "type": "repeater",
+            "instructions": "Enter as many answers as needed, be sure to mark the correct answer with the ”Correct Answer” label!",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add answer",
+            "sub_fields": [
+                {
+                    "key": "field_5bd64cc97b038",
+                    "label": "Position X",
+                    "name": "position_x",
+                    "type": "number",
+                    "instructions": "Absolute px value from left",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5bd64e387b039",
+                    "label": "Position Y",
+                    "name": "position_y",
+                    "type": "number",
+                    "instructions": "Absolute px value from top",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5bd64b8ca473b",
+                    "label": "Answer option",
+                    "name": "answer_option",
+                    "type": "textarea",
+                    "instructions": "Offer a hint here to the right answer",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5bd64ba9a473c",
+                    "label": "Answer Type",
+                    "name": "answer_type",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": [
+                        "Incorrect answer",
+                        "Correct answer"
+                    ],
+                    "allow_null": 1,
+                    "other_choice": 0,
+                    "default_value": "",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "survivor_resources"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "resource_category:geography-quiz"
+            }
+        ]
+    ],
+    "menu_order": 30,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1540833676
+}
