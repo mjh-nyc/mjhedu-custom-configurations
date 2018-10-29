@@ -385,18 +385,6 @@ function wpa_timeline_permalinks( $post_link, $post ){
 }
 add_filter( 'post_type_link', 'wpa_timeline_permalinks', 1, 2 );
 
-//Resource category
-/*function wpa_resource_category_permalinks( $post_link, $post ){
-    if ( is_object( $post ) && $post->post_type == 'survivor_resources' ){
-        $terms = wp_get_object_terms( $post->ID, 'resource_category' );
-        if( $terms ){
-            return str_replace( '%resource_category%' , $terms[0]->slug , $post_link );
-        }
-    }
-    return $post_link;
-}
-add_filter( 'post_type_link', 'wpa_resource_category_permalinks', 1, 2 );*/
-
 
 // END CUSTOM POST TYPES REWRITES ///////////////////////////////////
 //******************************************************************//
@@ -404,14 +392,33 @@ add_filter( 'post_type_link', 'wpa_resource_category_permalinks', 1, 2 );*/
 
 //******************************************************************//
 // ADD FILTER BY CUSTOM TAXONOMY ///////////////////////////////////
-function filter_stories_by_survivor( $post_type, $which ) {
-    // Apply this only on a specific post types
-    if ( 'survivor_story' !== $post_type && 'timeline' !== $post_type )
+function add_filters_to_adminview( $post_type, $which ) {
+    // Apply this only to specific post types
+    if ( 'survivor_story' !== $post_type && 
+         'timeline' !== $post_type &&
+         'survivor_resources' !== $post_type && 
+         'media_resources' !== $post_type)
         return;
 
-    // A list of taxonomy slugs to filter by
-    $taxonomies = array( 'survivors');
-
+    switch ($post_type) {
+        case 'survivor_story':
+            // A list of taxonomy slugs to filter by
+            $taxonomies = array( 'survivors' );
+            break;
+        case 'timeline':
+            // A list of taxonomy slugs to filter by
+            $taxonomies = array( 'survivors','timeline_category' );
+            break;
+        case 'survivor_resources':
+            // A list of taxonomy slugs to filter by
+            $taxonomies = array( 'resource_category','survivors' );
+            break;
+        case 'media_resources':
+            // A list of taxonomy slugs to filter by
+            $taxonomies = array( 'media_resources_category' );
+            break;
+    }
+    
     foreach ( $taxonomies as $taxonomy_slug ) {
 
         // Retrieve taxonomy data
@@ -437,116 +444,7 @@ function filter_stories_by_survivor( $post_type, $which ) {
     }
 
 }
-add_action( 'restrict_manage_posts', 'filter_stories_by_survivor' , 10, 2);
-
-
-//ADD FILTER TO TIMLINE CPT
-function filter_stories_by_timeline_type( $post_type, $which ) {
-    // Apply this only on a specific post types
-    if ( 'timeline' !== $post_type )
-        return;
-
-    // A list of taxonomy slugs to filter by
-    $taxonomies = array( 'timeline_category');
-
-    foreach ( $taxonomies as $taxonomy_slug ) {
-
-        // Retrieve taxonomy data
-        $taxonomy_obj = get_taxonomy( $taxonomy_slug );
-        $taxonomy_name = $taxonomy_obj->labels->name;
-
-        // Retrieve taxonomy terms
-        $terms = get_terms( $taxonomy_slug );
-
-        // Display filter HTML
-        echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
-        echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $taxonomy_name ) . '</option>';
-        foreach ( $terms as $term ) {
-            printf(
-                '<option value="%1$s" %2$s>%3$s</option>', //(%4$s)
-                $term->slug,
-                ( ( isset( $_GET[$taxonomy_slug] ) && ( $_GET[$taxonomy_slug] == $term->slug ) ) ? ' selected="selected"' : '' ),
-                $term->name,
-                $term->count
-            );
-        }
-        echo '</select>';
-    }
-
-}
-add_action( 'restrict_manage_posts', 'filter_stories_by_timeline_type' , 10, 2);
-
-//ADD FILTERS TO RESOURCES CPT
-function filter_resources_filter( $post_type, $which ) {
-    // Apply this only on a specific post types
-    if ( 'survivor_resources' !== $post_type )
-        return;
-
-    // A list of taxonomy slugs to filter by
-    $taxonomies = array( 'resource_category','survivors');
-
-    foreach ( $taxonomies as $taxonomy_slug ) {
-
-        // Retrieve taxonomy data
-        $taxonomy_obj = get_taxonomy( $taxonomy_slug );
-        $taxonomy_name = $taxonomy_obj->labels->name;
-
-        // Retrieve taxonomy terms
-        $terms = get_terms( $taxonomy_slug );
-
-        // Display filter HTML
-        echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
-        echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $taxonomy_name ) . '</option>';
-        foreach ( $terms as $term ) {
-            printf(
-                '<option value="%1$s" %2$s>%3$s</option>', //(%4$s)
-                $term->slug,
-                ( ( isset( $_GET[$taxonomy_slug] ) && ( $_GET[$taxonomy_slug] == $term->slug ) ) ? ' selected="selected"' : '' ),
-                $term->name,
-                $term->count
-            );
-        }
-        echo '</select>';
-    }
-
-}
-add_action( 'restrict_manage_posts', 'filter_resources_filter' , 10, 2);
-
-//ADD FILTER TO Media Resources CPT
-function filter_by_media_cat( $post_type, $which ) {
-    // Apply this only on a specific post types
-    if ( 'media_resources' !== $post_type )
-        return;
-
-    // A list of taxonomy slugs to filter by
-    $taxonomies = array( 'media_resources_category');
-
-    foreach ( $taxonomies as $taxonomy_slug ) {
-
-        // Retrieve taxonomy data
-        $taxonomy_obj = get_taxonomy( $taxonomy_slug );
-        $taxonomy_name = $taxonomy_obj->labels->name;
-
-        // Retrieve taxonomy terms
-        $terms = get_terms( $taxonomy_slug );
-
-        // Display filter HTML
-        echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
-        echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $taxonomy_name ) . '</option>';
-        foreach ( $terms as $term ) {
-            printf(
-                '<option value="%1$s" %2$s>%3$s</option>', //(%4$s)
-                $term->slug,
-                ( ( isset( $_GET[$taxonomy_slug] ) && ( $_GET[$taxonomy_slug] == $term->slug ) ) ? ' selected="selected"' : '' ),
-                $term->name,
-                $term->count
-            );
-        }
-        echo '</select>';
-    }
-
-}
-add_action( 'restrict_manage_posts', 'filter_by_media_cat' , 10, 2);
+add_action( 'restrict_manage_posts', 'add_filters_to_adminview' , 10, 2);
 
 // END FILTER BY CUSTOM TAXONOMY ///////////////////////////////////
 /******************************************************************/
