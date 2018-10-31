@@ -5,7 +5,7 @@
         {
             "key": "field_5bd1fc84de2c2",
             "label": "Are you an educator?",
-            "name": "is_educator",
+            "name": "user_is_educator",
             "type": "radio",
             "instructions": "",
             "required": 1,
@@ -1503,6 +1503,82 @@
             "re_theme": "light",
             "re_type": "image",
             "re_size": "normal"
+        },
+        {
+            "key": "field_5bd7f0eb4cdd8",
+            "label": "Terms Agreement",
+            "name": "user_terms_agreement",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "I agree the following Terms & Conditions",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5bd7f23780d51",
+            "label": "Admission Pass",
+            "name": "user_admission_pass_agreement",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "As our thank you for registering, please check this box if you would like to receive free admissions passes for you and a guest to the Museum of Jewish Heritage - A Living Memorial to the Holocaust. We will contact you by email.",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5bd7f3463649a",
+            "label": "Group Visit Schedule",
+            "name": "user_group_visit_schedule",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "If you would schedule a group visit to the Museum of Jewish Heritage - A Living Memorial to the Holocaust for your classroom, grade level, or colleagues. We will contact you by email.",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5bd7f2e174023",
+            "label": "Email List",
+            "name": "user_email_list_agreement",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Add me to the email list. We promise to send you only relevant emails.",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -1523,5 +1599,5 @@
     "active": 1,
     "description": "",
     "recaptcha": 0,
-    "modified": 1540825810
+    "modified": 1540879326
 }
