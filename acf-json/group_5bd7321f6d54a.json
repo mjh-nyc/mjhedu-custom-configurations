@@ -35,7 +35,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "permalink",
         "the_content",
         "excerpt",
         "discussion",
@@ -45,12 +44,11 @@
         "author",
         "format",
         "page_attributes",
-        "featured_image",
         "categories",
         "tags",
         "send-trackbacks"
     ],
     "active": 1,
     "description": "",
-    "modified": 1540833177
+    "modified": 1541003648
 }

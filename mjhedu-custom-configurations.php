@@ -139,7 +139,7 @@ function mjhedu_create_post_types() {
         'menu_icon' => 'dashicons-album',
         'has_archive' => true,
         'public' => true,
-        'supports' => array( 'title', 'editor', 'custom-fields', 'page-attributes'),
+        'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes'),
         'exclude_from_search' => false,
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'survivor-resources/%survivors%', 'with_front' => false ),
