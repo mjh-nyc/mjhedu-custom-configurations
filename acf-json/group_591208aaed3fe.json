@@ -1,0 +1,153 @@
+{
+    "key": "group_591208aaed3fe",
+    "title": "Social",
+    "fields": [
+        {
+            "key": "field_591208b3491b8",
+            "label": "Image for social media channels",
+            "name": "social",
+            "type": "image",
+            "instructions": "Upload a general image to be used for the social media channels when users share your pages. Note that this image is overwritten by featured images on specific pages. This image will only be used if no featured image is present. Recommended size is 1640px wide by 624px high. Do not add text to your images.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_59120f11f62b7",
+            "label": "Twitter handle",
+            "name": "twitter_handle",
+            "type": "text",
+            "instructions": "Enter your Twitter handle, omitting the @ sign",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5912118306351",
+            "label": "Instagram handle",
+            "name": "instagram_handle",
+            "type": "text",
+            "instructions": "Enter your Instagram handle, omitting the @ sign",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5928562d717a3",
+            "label": "Youtube link",
+            "name": "youtube_link",
+            "type": "url",
+            "instructions": "Enter the full URL to your YouTube channel",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_59285675717a4",
+            "label": "Facebook link",
+            "name": "facebook_link",
+            "type": "url",
+            "instructions": "Enter the URL to your facebook page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_59349d2720338",
+            "label": "Young friends",
+            "name": "young_friends",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5932f6bdca276",
+            "label": "Site description",
+            "name": "site_description",
+            "type": "textarea",
+            "instructions": "Enter the site description. It will be used for generic meta tags on homepage and on pages and posts where unique excerpts have not been created. Max length is 160 characters.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 160,
+            "rows": 4,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-social-channels"
+            }
+        ]
+    ],
+    "menu_order": 100,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1540995589
+}
