@@ -1510,7 +1510,7 @@
             "name": "user_terms_agreement",
             "type": "true_false",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -1584,9 +1584,9 @@
     "location": [
         [
             {
-                "param": "user_form",
+                "param": "user_role",
                 "operator": "==",
-                "value": "all"
+                "value": "subscriber"
             }
         ]
     ],
@@ -1599,5 +1599,5 @@
     "active": 1,
     "description": "",
     "recaptcha": 0,
-    "modified": 1540879326
+    "modified": 1540965393
 }
