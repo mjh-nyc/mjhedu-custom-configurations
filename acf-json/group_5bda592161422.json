@@ -41,6 +41,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_5bdb7385658db",
+            "label": "User Name",
+            "name": "user_user_login",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "User Name",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5bda42a5b3269",
             "label": "Email Address",
             "name": "user_email_address",
@@ -77,5 +96,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541036420
+    "modified": 1541108720
 }

@@ -1565,9 +1565,9 @@
     "location": [
         [
             {
-                "param": "user_form",
+                "param": "user_role",
                 "operator": "==",
-                "value": "all"
+                "value": "subscriber"
             }
         ]
     ],
@@ -1579,5 +1579,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541036933
+    "modified": 1541097815
 }
