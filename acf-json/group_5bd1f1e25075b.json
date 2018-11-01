@@ -1486,25 +1486,6 @@
             ]
         },
         {
-            "key": "field_5bd34787002d4",
-            "label": "Captcha",
-            "name": "user_captcha",
-            "type": "recaptcha",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "site_key": "",
-            "secret_key": "",
-            "re_theme": "light",
-            "re_type": "image",
-            "re_size": "normal"
-        },
-        {
             "key": "field_5bd7f0eb4cdd8",
             "label": "Terms Agreement",
             "name": "user_terms_agreement",
@@ -1584,9 +1565,9 @@
     "location": [
         [
             {
-                "param": "user_role",
+                "param": "user_form",
                 "operator": "==",
-                "value": "subscriber"
+                "value": "all"
             }
         ]
     ],
@@ -1598,6 +1579,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "recaptcha": 0,
-    "modified": 1540965393
+    "modified": 1541036933
 }
