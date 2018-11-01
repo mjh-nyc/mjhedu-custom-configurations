@@ -1,13 +1,13 @@
 {
     "key": "group_5bd64ac1e1fbe",
-    "title": "Geography Quiz Answers",
+    "title": "Geography Quiz",
     "fields": [
         {
-            "key": "field_5bd64b06a473a",
-            "label": "Quiz answer",
-            "name": "quiz_answer",
+            "key": "field_5bd9ede352a66",
+            "label": "Quiz Questions",
+            "name": "quiz_questions",
             "type": "repeater",
-            "instructions": "Enter as many answers as needed, be sure to mark the correct answer with the ”Correct Answer” label!",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,61 +15,19 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
+            "collapsed": "field_5bd9edf852a67",
             "min": 0,
             "max": 0,
-            "layout": "block",
-            "button_label": "Add answer",
+            "layout": "row",
+            "button_label": "Add quiz question",
             "sub_fields": [
                 {
-                    "key": "field_5bd64cc97b038",
-                    "label": "Position X",
-                    "name": "position_x",
-                    "type": "number",
-                    "instructions": "Absolute px value from left",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
-                },
-                {
-                    "key": "field_5bd64e387b039",
-                    "label": "Position Y",
-                    "name": "position_y",
-                    "type": "number",
-                    "instructions": "Absolute px value from top",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
-                },
-                {
-                    "key": "field_5bd64b8ca473b",
-                    "label": "Answer option",
-                    "name": "answer_option",
+                    "key": "field_5bd9edf852a67",
+                    "label": "Quiz Question",
+                    "name": "quiz_question",
                     "type": "textarea",
-                    "instructions": "Offer a hint here to the right answer",
-                    "required": 1,
+                    "instructions": "",
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -79,32 +37,114 @@
                     "default_value": "",
                     "placeholder": "",
                     "maxlength": "",
-                    "rows": 4,
+                    "rows": 3,
                     "new_lines": ""
                 },
                 {
-                    "key": "field_5bd64ba9a473c",
-                    "label": "Answer Type",
-                    "name": "answer_type",
-                    "type": "radio",
+                    "key": "field_5bd9ee1152a68",
+                    "label": "Quiz Answers",
+                    "name": "quiz_answers",
+                    "type": "repeater",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "choices": [
-                        "Incorrect answer",
-                        "Correct answer"
-                    ],
-                    "allow_null": 1,
-                    "other_choice": 0,
-                    "default_value": "",
-                    "layout": "horizontal",
-                    "return_format": "value",
-                    "save_other_choice": 0
+                    "collapsed": "field_5bd9ee2652a69",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "block",
+                    "button_label": "Add answer",
+                    "sub_fields": [
+                        {
+                            "key": "field_5bd9ee8352a6b",
+                            "label": "Position X",
+                            "name": "position_x",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
+                        },
+                        {
+                            "key": "field_5bd9eea252a6c",
+                            "label": "Position Y",
+                            "name": "position_y",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
+                        },
+                        {
+                            "key": "field_5bd9ee2652a69",
+                            "label": "Answer option",
+                            "name": "answer_option",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_5bd9ee5c52a6a",
+                            "label": "Answer Type",
+                            "name": "answer_type",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": [
+                                "Incorrect Answer",
+                                "Correct Answer"
+                            ],
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        }
+                    ]
                 }
             ]
         }
@@ -129,7 +169,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "permalink",
         "the_content",
         "excerpt",
         "discussion",
@@ -139,12 +178,11 @@
         "author",
         "format",
         "page_attributes",
-        "featured_image",
         "categories",
         "tags",
         "send-trackbacks"
     ],
     "active": 1,
     "description": "",
-    "modified": 1540833676
+    "modified": 1541087861
 }
