@@ -45,7 +45,8 @@ function mjhedu_create_post_types() {
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
 		'rewrite' => array( 'slug' => 'lessons' ),
-		'menu_position' => 5
+		'menu_position' => 5,
+        'taxonomies'  => array( 'category' )
 		)
 	);
     //End lesson plans
@@ -75,7 +76,8 @@ function mjhedu_create_post_types() {
         'exclude_from_search' => false,
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'timeline/%timeline_category%', 'with_front' => false ),
-        'menu_position' => 6
+        'menu_position' => 6,
+        'taxonomies'  => array( 'category' )
         )
     );
     //Create timline taxonomy
@@ -109,7 +111,8 @@ function mjhedu_create_post_types() {
         'exclude_from_search' => false,
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'survivor-stories/%survivors%', 'with_front' => false ),
-        'menu_position' => 7
+        'menu_position' => 7,
+        'taxonomies'  => array( 'category' )
         )
     );
     //Create survivor stories taxonomy, survivor story taxonomy is a list of survivors
@@ -143,7 +146,8 @@ function mjhedu_create_post_types() {
         'exclude_from_search' => false,
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'survivor-resources/%survivors%', 'with_front' => false ),
-        'menu_position' => 7
+        'menu_position' => 7,
+        'taxonomies'  => array( 'category' )
         )
     );
     //Create survivor resources taxonomy
@@ -592,6 +596,28 @@ echo '<p>This custom theme and admin menu have been devloped by <a href="mailto:
 //END ADD DASHBOARD WIDGETS
 //***************************************************************//
 
+
+
+//***************************************************************//
+// RENAME CATEGROIES TO THEMES ////////////////////////////////
+function change_cat_object() {
+    global $wp_taxonomies;
+    $labels = &$wp_taxonomies['category']->labels;
+    $labels->name = 'Themes';
+    $labels->singular_name = 'Theme';
+    $labels->add_new = 'Add Theme';
+    $labels->add_new_item = 'Add Theme';
+    $labels->edit_item = 'Edit Theme';
+    $labels->new_item = 'Theme';
+    $labels->view_item = 'View Theme';
+    $labels->search_items = 'Search Themes';
+    $labels->not_found = 'No Themes found';
+    $labels->not_found_in_trash = 'No Themes found in Trash';
+    $labels->all_items = 'All Themes';
+    $labels->menu_name = 'Themes';
+    $labels->name_admin_bar = 'Themes';
+}
+add_action( 'init', 'change_cat_object' );
 
 
 
