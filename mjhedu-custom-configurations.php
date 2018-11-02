@@ -41,7 +41,7 @@ function mjhedu_create_post_types() {
         'menu_icon' => 'dashicons-clipboard',
 		'has_archive' => true,
  		'public' => true,
-		'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail','page-attributes' ),
+		'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail','page-attributes','excerpt' ),
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
 		'rewrite' => array( 'slug' => 'lessons' ),
