@@ -20,6 +20,44 @@
             "min_size": "",
             "max_size": "",
             "mime_types": ".zip"
+        },
+        {
+            "key": "field_5bddeec3c591f",
+            "label": "Lesson Plans Homepage Header",
+            "name": "lesson_plans_homepage_header",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Lesson Plans",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bddeee7c5920",
+            "label": "Lesson Plans Homepage Teaser",
+            "name": "lesson_plans_homepage_teaser",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": ""
         }
     ],
     "location": [
@@ -39,5 +77,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541087929
+    "modified": 1541271293
 }
