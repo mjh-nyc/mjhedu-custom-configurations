@@ -41,6 +41,7 @@ function mjhedu_create_post_types() {
         'menu_icon' => 'dashicons-clipboard',
 		'has_archive' => true,
  		'public' => true,
+        'show_in_nav_menus' => true,
 		'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail','page-attributes','excerpt' ),
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
@@ -110,7 +111,7 @@ function mjhedu_create_post_types() {
         'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes' ),
         'exclude_from_search' => false,
         'capability_type' => 'post',
-        'rewrite' => array( 'slug' => 'survivor-stories/%survivors%', 'with_front' => false ),
+        'rewrite' => array( 'slug' => 'survivor-stories', 'with_front' => false ),
         'menu_position' => 7,
         'taxonomies'  => array( 'category' )
         )
