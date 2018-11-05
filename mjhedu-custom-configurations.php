@@ -217,6 +217,35 @@ function mjhedu_create_post_types() {
     register_media_resources_taxonomy();
     //End media resources
 
+    // Register events
+    $event_labels = array(
+        'name' => 'Events',
+        'singular_name' => 'Event',
+        'add_new' => 'Add New Event',
+        'add_new_item' => 'Add New Event',
+        'edit_item' => 'Edit Event',
+        'new_item' => 'New Event',
+        'all_items' => 'All Events',
+        'view_item' => 'View Event',
+        'search_items' => 'Search Events',
+        'not_found' =>  'No Events Found',
+        'not_found_in_trash' => 'No Events Found in Trash', 
+        'parent_item_colon' => '',
+        'menu_name' => 'Events',
+    );
+    register_post_type( 'event', array(
+        'labels' => $event_labels,
+        'menu_icon' => 'dashicons-calendar-alt',
+        'has_archive' => true,
+        'public' => true,
+        'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail','page-attributes' ),
+        'exclude_from_search' => false,
+        'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'events' ),
+        )
+    );
+    register_event_category();
+
 }
 add_action( 'init', 'mjhedu_create_post_types' );
 // END CUSTOM POST TYPES ////////////////////////////////////////
@@ -357,6 +386,34 @@ function register_media_resources_taxonomy(){
     );
 
     register_taxonomy( 'media_resources_category', array( 'media_resources' ), $args );
+}
+
+//Register Event Categories Taxonomy
+function register_event_category(){
+    // Add new taxonomy, make it hierarchical (like categories)
+    $labels = array(
+        'name'              => _x( 'Event Categories', 'taxonomy general name', 'sage' ),
+        'singular_name'     => _x( 'Event Category', 'taxonomy singular name', 'sage' ),
+        'search_items'      => __( 'Search Event Categories', 'sage' ),
+        'all_items'         => __( 'All Event Categories', 'sage' ),
+        'parent_item'       => __( 'Parent Event Category', 'sage' ),
+        'parent_item_colon' => __( 'Parent Event Category:', 'sage' ),
+        'edit_item'         => __( 'Edit Event Category', 'sage' ),
+        'update_item'       => __( 'Update Event Category', 'sage' ),
+        'add_new_item'      => __( 'Add New Event Category', 'sage' ),
+        'new_item_name'     => __( 'New Event Category Name', 'sage' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'event-category' ),
+    );
+
+    register_taxonomy( 'event_category', array( 'event' ), $args );
 }
 
 // END CUSTOM TAXONOMIES ////////////////////////////////////////
