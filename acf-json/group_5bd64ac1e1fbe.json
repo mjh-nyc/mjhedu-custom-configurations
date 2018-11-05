@@ -1,6 +1,6 @@
 {
     "key": "group_5bd64ac1e1fbe",
-    "title": "Geography Quiz",
+    "title": "Geography Quiz (v2)",
     "fields": [
         {
             "key": "field_5bd9ede352a66",
@@ -159,7 +159,7 @@
             {
                 "param": "post_taxonomy",
                 "operator": "==",
-                "value": "resource_category:geography-quiz"
+                "value": "category:lorem-ipsum-theme"
             }
         ]
     ],
@@ -184,5 +184,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1541087861
+    "modified": 1541374200
 }
