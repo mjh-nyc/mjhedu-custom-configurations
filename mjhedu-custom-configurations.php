@@ -715,4 +715,18 @@ function mjh_register_forms() {
 add_action( 'af/register_forms', 'mjh_register_forms' );
 //END ADVANCE FORMS EXPORTS
 //***************************************************************//
+
+//***************************************************************//
+// ACF PRO REMOVE FRONT END CSS ////////////////////////////////
+function mjh_dequeue_acf_pro_frontend_css() {
+	wp_dequeue_style('acf-global');
+	wp_deregister_style('acf-global');
+	wp_dequeue_style('acf-input' );
+	wp_deregister_style('acf-input' );
+	wp_dequeue_style('acf-field-group');
+	wp_deregister_style('acf-field-group');
+}
+ add_action('wp_enqueue_scripts','mjh_dequeue_acf_pro_frontend_css',100);
+//END ACF PRO REMOVE FRONT END CSS
+//***************************************************************//
 ?>
