@@ -107,7 +107,7 @@
                         "page",
                         "lessons",
                         "survivor_story",
-                        "timeline"
+                        "event"
                     ],
                     "taxonomy": "",
                     "allow_null": 0,
@@ -149,7 +149,7 @@
                         "page",
                         "lessons",
                         "survivor_story",
-                        "timeline"
+                        "event"
                     ],
                     "taxonomy": "",
                     "allow_null": 0,
@@ -173,13 +173,59 @@
                     "post_type": [
                         "page",
                         "lessons",
-                        "timeline",
-                        "survivor_story"
+                        "survivor_story",
+                        "event"
                     ],
                     "taxonomy": "",
                     "allow_null": 0,
                     "multiple": 0,
                     "return_format": "object",
+                    "ui": 1
+                }
+            ]
+        },
+        {
+            "key": "field_5be725200e169",
+            "label": "Supporting Features",
+            "name": "supporting_features",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5be7270b0e16e",
+            "min": 0,
+            "max": 3,
+            "layout": "row",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5be7270b0e16e",
+                    "label": "Feature",
+                    "name": "supporting_feature",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page",
+                        "event",
+                        "survivor_story",
+                        "lessons"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
                     "ui": 1
                 }
             ]
@@ -207,5 +253,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541087924
+    "modified": 1541877703
 }
