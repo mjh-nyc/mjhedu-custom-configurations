@@ -15,11 +15,12 @@
                 "class": "",
                 "id": ""
             },
+            "hide_admin": 0,
             "return_format": "url",
             "library": "uploadedTo",
             "min_size": "",
             "max_size": "",
-            "mime_types": ".zip"
+            "mime_types": ".zip,.pdf"
         }
     ],
     "location": [
@@ -39,5 +40,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541087912
+    "modified": 1541903090
 }
