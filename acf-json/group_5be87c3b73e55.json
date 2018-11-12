@@ -1,0 +1,40 @@
+{
+    "key": "group_5be87c3b73e55",
+    "title": "Testimony Content",
+    "fields": [
+        {
+            "key": "field_5be87c49d744a",
+            "label": "Testimony",
+            "name": "testimony_embed",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimony"
+            }
+        ]
+    ],
+    "menu_order": 60,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1541969962
+}

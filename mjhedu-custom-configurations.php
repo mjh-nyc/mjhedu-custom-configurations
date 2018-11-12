@@ -187,7 +187,7 @@ function mjhedu_create_post_types() {
     //End glossary CPT
 
 
-     // Register Media Resources (Book, Films, Websites) CPT
+    // Register Media Resources (Book, Films, Websites) CPT
     $media_resources_labels = array(
         'name' => 'Media Resources',
         'singular_name' => 'Media Resource',
@@ -216,6 +216,64 @@ function mjhedu_create_post_types() {
     );
     register_media_resources_taxonomy();
     //End media resources
+
+    //Register Artifacts CPT
+    $artifacts_labels = array(
+        'name' => 'Artifacts',
+        'singular_name' => 'Artifact',
+        'add_new' => 'Add Artifact',
+        'add_new_item' => 'Add Artifact',
+        'edit_item' => 'Edit Artifact',
+        'new_item' => 'New Artifact',
+        'all_items' => 'Artifacts',
+        'view_item' => 'View Artifacts',
+        'search_items' => 'Search Artifacts',
+        'not_found' =>  'No Artifacts Found',
+        'not_found_in_trash' => 'No Artifacts Found in Trash', 
+        'parent_item_colon' => '',
+        'menu_name' => 'Artifacts',
+    );
+    register_post_type( 'artifacts', array(
+        'labels' => $artifacts_labels,
+        'has_archive' => false,
+        'public' => true,
+        'supports' => array( 'title', 'excerpt', 'custom-fields', 'thumbnail'),
+        'exclude_from_search' => true,
+        'capability_type' => 'post',
+        'show_in_menu' => 'edit.php?post_type=survivor_resources',
+        'rewrite' => array( 'slug' => 'artifacts' )
+        )
+    );
+
+
+    // Register testimony post type
+    $testimony_labels = array(
+        'name' => 'Testimonies',
+        'singular_name' => 'Testimony',
+        'add_new' => 'Add New Testimony',
+        'add_new_item' => 'Add New Testimony',
+        'edit_item' => 'Edit Testimony',
+        'new_item' => 'New Testimony',
+        'all_items' => 'Testimonies',
+        'view_item' => 'View Testimony',
+        'search_items' => 'Search Testimonies',
+        'not_found' =>  'No Testimonies Found',
+        'not_found_in_trash' => 'No Testimonies Found in Trash', 
+        'parent_item_colon' => '',
+        'menu_name' => 'Testimonies',
+    );
+    register_post_type( 'testimony', array(
+        'labels' => $testimony_labels,
+        'has_archive' => true,
+        'public' => true,
+        'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail','page-attributes' ),
+        'exclude_from_search' => false,
+        'show_in_menu' => 'edit.php?post_type=survivor_resources',
+        'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'testimonies' ),
+        )
+    );
+
 
     // Register events
     $event_labels = array(
