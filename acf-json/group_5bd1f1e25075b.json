@@ -619,7 +619,7 @@
                     "min": 0,
                     "max": 0,
                     "layout": "row",
-                    "button_label": "Add another entry for more children",
+                    "button_label": "Add school address",
                     "sub_fields": [
                         {
                             "key": "field_5bd6361dd0ee9",
@@ -1579,5 +1579,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542040995
+    "modified": 1542046128
 }

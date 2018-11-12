@@ -235,12 +235,12 @@ function mjhedu_create_post_types() {
     );
     register_post_type( 'artifacts', array(
         'labels' => $artifacts_labels,
-        'has_archive' => false,
+        'menu_icon' => 'dashicons-images-alt2',
+        'has_archive' => true,
         'public' => true,
-        'supports' => array( 'title', 'excerpt', 'custom-fields', 'thumbnail'),
-        'exclude_from_search' => true,
+        'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail'),
+        'exclude_from_search' => false,
         'capability_type' => 'post',
-        'show_in_menu' => 'edit.php?post_type=survivor_resources',
         'rewrite' => array( 'slug' => 'artifacts' )
         )
     );
@@ -264,11 +264,11 @@ function mjhedu_create_post_types() {
     );
     register_post_type( 'testimony', array(
         'labels' => $testimony_labels,
+        'menu_icon' => 'dashicons-video-alt',
         'has_archive' => true,
         'public' => true,
         'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail','page-attributes' ),
         'exclude_from_search' => false,
-        'show_in_menu' => 'edit.php?post_type=survivor_resources',
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'testimonies' ),
         )

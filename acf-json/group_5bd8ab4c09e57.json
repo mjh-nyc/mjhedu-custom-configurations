@@ -114,6 +114,25 @@
                     "multiple": 0,
                     "return_format": "object",
                     "ui": 1
+                },
+                {
+                    "key": "field_5be9b6db551a3",
+                    "label": "Custom Feature Label",
+                    "name": "custom_feature_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -253,5 +272,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541877703
+    "modified": 1542043383
 }
