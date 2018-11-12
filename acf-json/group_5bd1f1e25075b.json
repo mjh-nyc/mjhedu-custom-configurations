@@ -19,7 +19,7 @@
                 "Yes": "Yes",
                 "No": "No"
             },
-            "allow_null": 0,
+            "allow_null": 1,
             "other_choice": 0,
             "default_value": "",
             "layout": "horizontal",
@@ -28,7 +28,7 @@
         },
         {
             "key": "field_5bd1fd70fb899",
-            "label": "Group Educator",
+            "label": "For educators:",
             "name": "group_educator",
             "type": "group",
             "instructions": "",
@@ -94,7 +94,7 @@
                         "Yes": "Yes",
                         "No": "No"
                     },
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "other_choice": 0,
                     "default_value": "",
                     "layout": "horizontal",
@@ -122,7 +122,7 @@
                 },
                 {
                     "key": "field_5bd27dafcffec",
-                    "label": "Grade",
+                    "label": "Grade(s)",
                     "name": "educator_grade",
                     "type": "select",
                     "instructions": "",
@@ -147,7 +147,7 @@
                     "default_value": [
                         "Grade"
                     ],
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "multiple": 1,
                     "ui": 1,
                     "ajax": 0,
@@ -156,7 +156,7 @@
                 },
                 {
                     "key": "field_5bd2818b4ee44",
-                    "label": "Other grade if not listed above",
+                    "label": "Other grades, if not listed above",
                     "name": "educator_other_grade",
                     "type": "text",
                     "instructions": "",
@@ -247,7 +247,7 @@
                         "WY": "Wyoming"
                     },
                     "default_value": [],
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "multiple": 0,
                     "ui": 1,
                     "ajax": 0,
@@ -549,7 +549,7 @@
         },
         {
             "key": "field_5bd62a6c6f3fb",
-            "label": "Group Non Educator",
+            "label": "For non-educators:",
             "name": "group_non_educator",
             "type": "group",
             "instructions": "",
@@ -572,7 +572,7 @@
             "sub_fields": [
                 {
                     "key": "field_5bd62a6d6f3fd",
-                    "label": "Are you a parent\/guardian",
+                    "label": "Are you a parent or guardian?",
                     "name": "non_educator_is_parent",
                     "type": "radio",
                     "instructions": "",
@@ -587,9 +587,9 @@
                         "Yes": "Yes",
                         "No": "No"
                     },
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "other_choice": 0,
-                    "default_value": "No",
+                    "default_value": "",
                     "layout": "horizontal",
                     "return_format": "value",
                     "save_other_choice": 0
@@ -615,11 +615,11 @@
                         "class": "non_educator_children",
                         "id": ""
                     },
-                    "collapsed": "",
-                    "min": 1,
+                    "collapsed": "field_5bd6361dd0ee9",
+                    "min": 0,
                     "max": 0,
                     "layout": "row",
-                    "button_label": "Add another entry if you have more than one child",
+                    "button_label": "Add another entry for more children",
                     "sub_fields": [
                         {
                             "key": "field_5bd6361dd0ee9",
@@ -707,7 +707,7 @@
                                 "WY": "Wyoming"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
                             "ui": 1,
                             "ajax": 0,
@@ -1009,7 +1009,7 @@
                 },
                 {
                     "key": "field_5bd632671da98",
-                    "label": "Are you studying education at the college\/graduate level?",
+                    "label": "Are you studying education at the college or graduate level?",
                     "name": "non_educator_college",
                     "type": "radio",
                     "instructions": "",
@@ -1024,16 +1024,16 @@
                         "Yes": "Yes",
                         "No": "No"
                     },
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "other_choice": 0,
-                    "default_value": "No",
+                    "default_value": "",
                     "layout": "horizontal",
                     "return_format": "value",
                     "save_other_choice": 0
                 },
                 {
                     "key": "field_5bd62f6dd6586",
-                    "label": "Group non educator college",
+                    "label": "If so, please provide your school information below:",
                     "name": "group_non_educator_college",
                     "type": "group",
                     "instructions": "",
@@ -1140,7 +1140,7 @@
                                 "WY": "Wyoming"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
                             "ui": 1,
                             "ajax": 0,
@@ -1457,7 +1457,7 @@
                         "Yes": "Yes",
                         "No": "No"
                     },
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "other_choice": 0,
                     "default_value": "",
                     "layout": "horizontal",
@@ -1487,7 +1487,7 @@
         },
         {
             "key": "field_5bd7f0eb4cdd8",
-            "label": "Terms Agreement",
+            "label": "Terms agreement",
             "name": "user_terms_agreement",
             "type": "true_false",
             "instructions": "",
@@ -1506,7 +1506,7 @@
         },
         {
             "key": "field_5bd7f23780d51",
-            "label": "Admission Pass",
+            "label": "Admission pass",
             "name": "user_admission_pass_agreement",
             "type": "true_false",
             "instructions": "",
@@ -1517,7 +1517,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "As our thank you for registering, please check this box if you would like to receive free admissions passes for you and a guest to the Museum of Jewish Heritage - A Living Memorial to the Holocaust. We will contact you by email.",
+            "message": "As our thank you for registering, please check this box if you would like to receive free admissions passes for you and a guest to the Museum of Jewish Heritage—A Living Memorial to the Holocaust. We will contact you by email.",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -1525,7 +1525,7 @@
         },
         {
             "key": "field_5bd7f3463649a",
-            "label": "Group Visit Schedule",
+            "label": "Group visit schedule",
             "name": "user_group_visit_schedule",
             "type": "true_false",
             "instructions": "",
@@ -1536,7 +1536,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "If you would schedule a group visit to the Museum of Jewish Heritage - A Living Memorial to the Holocaust for your classroom, grade level, or colleagues. We will contact you by email.",
+            "message": "If you would schedule a group visit to the Museum of Jewish Heritage—A Living Memorial to the Holocaust for your classroom, grade level, or colleagues. We will contact you by email.",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -1544,7 +1544,7 @@
         },
         {
             "key": "field_5bd7f2e174023",
-            "label": "Email List",
+            "label": "Email list",
             "name": "user_email_list_agreement",
             "type": "true_false",
             "instructions": "",
@@ -1579,5 +1579,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541357442
+    "modified": 1542040995
 }

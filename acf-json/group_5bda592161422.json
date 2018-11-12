@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5bda425e64353",
-            "label": "First Name",
+            "label": "First name",
             "name": "user_first_name",
             "type": "text",
             "instructions": "",
@@ -16,14 +16,14 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "First Name",
+            "placeholder": "First name",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
             "key": "field_5bda42791a28d",
-            "label": "Last Name",
+            "label": "Last name",
             "name": "user_last_name",
             "type": "text",
             "instructions": "",
@@ -35,14 +35,14 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "Last Name",
+            "placeholder": "Last name",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
             "key": "field_5bdb7385658db",
-            "label": "User Name",
+            "label": "User name",
             "name": "user_user_login",
             "type": "text",
             "instructions": "",
@@ -54,14 +54,14 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "User Name",
+            "placeholder": "User name",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
             "key": "field_5bda42a5b3269",
-            "label": "Email Address",
+            "label": "Email address",
             "name": "user_email_address",
             "type": "text",
             "instructions": "",
@@ -73,7 +73,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "Email Address",
+            "placeholder": "Email address",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -96,5 +96,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541357453
+    "modified": 1541994365
 }
