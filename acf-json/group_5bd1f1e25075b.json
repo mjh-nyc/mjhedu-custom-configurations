@@ -1498,7 +1498,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "I agree the following Terms & Conditions",
+            "hide_admin": 0,
+            "message": "I agree to the following terms & conditions",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -1579,5 +1580,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542046128
+    "modified": 1542144963
 }
