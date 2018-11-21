@@ -738,43 +738,6 @@ add_action( 'init', 'change_cat_object' );
 //***************************************************************//
 
 //***************************************************************//
-// ADVANCE FORMS EXPORTS ////////////////////////////////
-function mjh_register_forms() {
-	af_register_form( array(
-		'key' => 'form_5be4780772346',
-		'title' => 'Contact Form',
-		'display' => array(
-			'description' => '',
-			'success_message' => '<p>Thank You. We will be in touch shortly.</p>
-	',
-		),
-		'create_entries' => false,
-		'restrictions' => array(
-			'entries' => false,
-			'user' => false,
-			'schedule' => false,
-		),
-		'emails' => array(
-			array(
-				'name' => 'MJH Contact',
-				'active' => true,
-				'recipient_type' => 'custom',
-				'recipient_field' => array(
-				),
-				'recipient_custom' => 'dev@cloudred.com',
-				'from' => 'no-reply@mjhnyc.org',
-				'subject' => 'MJH Education Contact form submission',
-				'content' => '<p>{all_fields}</p>
-	',
-			),
-		),
-	) );
-}
-add_action( 'af/register_forms', 'mjh_register_forms' );
-//END ADVANCE FORMS EXPORTS
-//***************************************************************//
-
-//***************************************************************//
 // ACF PRO REMOVE FRONT END CSS ////////////////////////////////
 function mjh_dequeue_acf_pro_frontend_css() {
 	wp_dequeue_style('acf-global');
