@@ -750,4 +750,15 @@ function mjh_dequeue_acf_pro_frontend_css() {
  add_action('wp_enqueue_scripts','mjh_dequeue_acf_pro_frontend_css',100);
 //END ACF PRO REMOVE FRONT END CSS
 //***************************************************************//
+
+//***************************************************************//
+// CLEANUP EMAIL SENDER NAME ////////////////////////////////
+// Function to change sender name
+function mjh_sender_name( $original_email_from ) {
+	return html_entity_decode($original_email_from);
+}
+
+add_filter( 'wp_mail_from_name', 'mjh_sender_name' );
+//END CLEANUP EMAIL SENDER NAME
+//***************************************************************//
 ?>
