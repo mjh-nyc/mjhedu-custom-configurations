@@ -1499,7 +1499,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "I agree to the following terms & conditions",
+            "message": "I agree to the following <a href=\"\/privacy-policy\">terms & conditions<\/a>",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -1580,5 +1580,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542144963
+    "modified": 1542868787
 }
