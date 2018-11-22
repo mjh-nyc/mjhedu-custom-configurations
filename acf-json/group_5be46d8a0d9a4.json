@@ -8,7 +8,7 @@
             "name": "contact_first_name",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -28,7 +28,7 @@
             "name": "contact_last_name",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -48,7 +48,7 @@
             "name": "contact_email_address",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -68,7 +68,7 @@
             "name": "contact_subject",
             "type": "select",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -77,8 +77,14 @@
             },
             "hide_admin": 0,
             "choices": {
-                "Lorem": "Lorem",
-                "Ipsum": "Ipsum"
+                "New York’s Holocaust curriculum – lesson plans": "New York’s Holocaust curriculum – lesson plans",
+                "New York’s Holocaust curriculum – resources": "New York’s Holocaust curriculum – resources",
+                "“Coming of Age During the Holocaust”": "“Coming of Age During the Holocaust”",
+                "“The Number on Great-Grandpa’s Arm”": "“The Number on Great-Grandpa’s Arm”",
+                "Professional Development for Teachers": "Professional Development for Teachers",
+                "Visiting the Museum of Jewish Heritage": "Visiting the Museum of Jewish Heritage",
+                "Learning more about the Museum of Jewish Heritage": "Learning more about the Museum of Jewish Heritage",
+                "Other": "Other"
             },
             "default_value": [],
             "allow_null": 0,
@@ -94,7 +100,7 @@
             "name": "contact_message",
             "type": "textarea",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -114,7 +120,7 @@
             {
                 "param": "af_form",
                 "operator": "==",
-                "value": "form_5be4780772346"
+                "value": "form_5bf57489bfcf1"
             }
         ]
     ],
@@ -126,5 +132,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541714019
+    "modified": 1542813041
 }
