@@ -755,7 +755,7 @@ function mjh_dequeue_acf_pro_frontend_css() {
 // CLEANUP EMAIL SENDER NAME ////////////////////////////////
 // Function to change sender name
 function mjh_sender_name( $original_email_from ) {
-	return html_entity_decode($original_email_from);
+	return html_entity_decode($original_email_from,ENT_QUOTES);
 }
 add_filter( 'wp_mail_from_name', 'mjh_sender_name', 20 );
 //END CLEANUP EMAIL SENDER NAME
