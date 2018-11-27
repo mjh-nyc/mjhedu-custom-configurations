@@ -15,8 +15,9 @@
                 "class": "",
                 "id": ""
             },
+            "hide_admin": 0,
             "default_value": "",
-            "placeholder": "First name",
+            "placeholder": "Enter first name",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -34,8 +35,9 @@
                 "class": "",
                 "id": ""
             },
+            "hide_admin": 0,
             "default_value": "",
-            "placeholder": "Last name",
+            "placeholder": "Enter last name",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -53,8 +55,9 @@
                 "class": "",
                 "id": ""
             },
+            "hide_admin": 0,
             "default_value": "",
-            "placeholder": "Email address",
+            "placeholder": "Enter an email to log in to this site",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -77,5 +80,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1543288341
+    "modified": 1543336014
 }

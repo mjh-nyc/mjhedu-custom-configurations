@@ -114,8 +114,9 @@
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "default_value": "",
-                    "placeholder": "School Name",
+                    "placeholder": "Enter school name",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
@@ -256,7 +257,7 @@
                 },
                 {
                     "key": "field_5bd28765f014a",
-                    "label": "Zipcode",
+                    "label": "Zip \/ postal code",
                     "name": "educator_zipcode",
                     "type": "text",
                     "instructions": "",
@@ -267,8 +268,9 @@
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "default_value": "",
-                    "placeholder": "Zip \/ Postal Code",
+                    "placeholder": "Enter code",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
@@ -1477,8 +1479,9 @@
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "default_value": "",
-                    "placeholder": "",
+                    "placeholder": "Enter message",
                     "maxlength": "",
                     "rows": "",
                     "new_lines": ""
@@ -1580,5 +1583,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542868787
+    "modified": 1543336254
 }
