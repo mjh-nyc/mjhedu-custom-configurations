@@ -50,7 +50,8 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "hide_admin": 0,
+            "layout": "block",
             "sub_fields": [
                 {
                     "key": "field_5bd8acd3f8ca3",
@@ -61,10 +62,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "100",
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "width": "",
                     "height": ""
                 },
@@ -77,10 +79,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "post_type": [
                         "lessons"
                     ],
@@ -91,6 +94,46 @@
                     "ui": 1
                 },
                 {
+                    "key": "field_5bfd9fef82c1c",
+                    "label": "Featured Lesson Label",
+                    "name": "featured_lesson_plan_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "Featured Lesson Plan",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 160
+                },
+                {
+                    "key": "field_5bfd9e47c8280",
+                    "label": "Button Label",
+                    "name": "featured_lesson_plan_button_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "View",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 15
+                },
+                {
                     "key": "field_5bd8ad983d67e",
                     "label": "Custom Feature",
                     "name": "custom_feature",
@@ -99,10 +142,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "post_type": [
                         "page",
                         "lessons",
@@ -124,15 +168,36 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5bfd9e6ec8281",
+                    "label": "Button Label",
+                    "name": "custom_feature_button_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "View",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 15
                 }
             ]
         },
@@ -140,7 +205,7 @@
             "key": "field_5bd8af3fda82b",
             "label": "Secondary Features",
             "name": "secondary_features",
-            "type": "group",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -149,57 +214,60 @@
                 "class": "",
                 "id": ""
             },
+            "hide_admin": 0,
+            "collapsed": "field_5bfd861985a20",
+            "min": 0,
+            "max": 2,
             "layout": "block",
+            "button_label": "Add Feature",
             "sub_fields": [
                 {
-                    "key": "field_5bd8af4cda82c",
-                    "label": "First Feature",
-                    "name": "first_feature",
+                    "key": "field_5bfd861985a20",
+                    "label": "Secondary Feature",
+                    "name": "secondary_feature",
                     "type": "post_object",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "70",
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "post_type": [
                         "page",
-                        "lessons",
+                        "event",
+                        "testimony",
+                        "artifacts",
                         "survivor_story",
-                        "event"
+                        "lessons"
                     ],
                     "taxonomy": "",
                     "allow_null": 0,
                     "multiple": 0,
-                    "return_format": "object",
+                    "return_format": "id",
                     "ui": 1
                 },
                 {
-                    "key": "field_5bd8af83da82d",
-                    "label": "Second Feature",
-                    "name": "second_feature",
-                    "type": "post_object",
+                    "key": "field_5bfd865985a21",
+                    "label": "Button Label",
+                    "name": "secondary_feature_button_label",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "30",
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "page",
-                        "lessons",
-                        "survivor_story",
-                        "event"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
+                    "hide_admin": 0,
+                    "default_value": "View",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 15
                 }
             ]
         },
@@ -216,10 +284,11 @@
                 "class": "",
                 "id": ""
             },
+            "hide_admin": 0,
             "collapsed": "field_5be7270b0e16e",
             "min": 0,
             "max": 3,
-            "layout": "row",
+            "layout": "block",
             "button_label": "",
             "sub_fields": [
                 {
@@ -231,10 +300,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "70",
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "post_type": [
                         "page",
                         "event",
@@ -246,6 +316,26 @@
                     "multiple": 0,
                     "return_format": "id",
                     "ui": 1
+                },
+                {
+                    "key": "field_5bfd7600cd340",
+                    "label": "Button Label",
+                    "name": "supporting_feature_button_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "View",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 15
                 }
             ]
         }
@@ -272,5 +362,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542043383
+    "modified": 1543348342
 }
