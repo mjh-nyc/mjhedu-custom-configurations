@@ -1,0 +1,44 @@
+{
+    "key": "group_5bfc907a78b96",
+    "title": "Share site email",
+    "fields": [
+        {
+            "key": "field_5bfc90948fdb0",
+            "label": "Share website",
+            "name": "share_email_address",
+            "type": "text",
+            "instructions": "Add an email to share the NY Holocaust Curriculum site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "Email address",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "af_form",
+                "operator": "==",
+                "value": "form_5bfc95164ceae"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1543281412
+}
