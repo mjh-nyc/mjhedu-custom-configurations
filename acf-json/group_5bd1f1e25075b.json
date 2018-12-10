@@ -1502,7 +1502,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "I agree to the following <a href=\"\/privacy-policy\" data-lity>terms & conditions<\/a>",
+            "message": "I agree to the following <a href=\"\/privacy-policy?inline=true\" data-lity>terms & conditions<\/a>",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -1583,5 +1583,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1544465795
+    "modified": 1544467680
 }
