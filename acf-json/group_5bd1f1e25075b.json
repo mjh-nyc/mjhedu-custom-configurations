@@ -1502,7 +1502,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "I agree to the following <a href=\"\/privacy-policy?inline=true\" data-lity>terms & conditions<\/a>",
+            "message": "I agree to the following <a href=\"\/privacy-policy?inline=true\" data-lity>terms & conditions<\/a>.",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -1521,7 +1521,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "As our thank you for registering, please check this box if you would like to receive free admissions passes for you and a guest to the Museum of Jewish Heritage—A Living Memorial to the Holocaust. We will contact you by email.",
+            "hide_admin": 0,
+            "message": "As our thank you for registering, please check this box if you would like to receive free admission passes for you and a guest to the Museum of Jewish Heritage—A Living Memorial to the Holocaust. We will contact you by email.",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -1529,7 +1530,7 @@
         },
         {
             "key": "field_5bd7f3463649a",
-            "label": "Group visit schedule",
+            "label": "Group visit",
             "name": "user_group_visit_schedule",
             "type": "true_false",
             "instructions": "",
@@ -1540,7 +1541,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "If you would schedule a group visit to the Museum of Jewish Heritage—A Living Memorial to the Holocaust for your classroom, grade level, or colleagues. We will contact you by email.",
+            "hide_admin": 0,
+            "message": "If you would schedule a group visit to the Museum of Jewish Heritage—A Living Memorial to the Holocaust for your classroom, grade level, or colleagues, please check this box. We will contact you by email.",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -1559,7 +1561,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Add me to the email list. We promise to send you only relevant emails.",
+            "hide_admin": 0,
+            "message": "Check this box to be added to the email list. We promise to send you only relevant information.",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -1583,5 +1586,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1544467680
+    "modified": 1544468943
 }
