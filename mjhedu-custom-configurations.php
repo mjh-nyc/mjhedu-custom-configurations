@@ -752,6 +752,22 @@ function mjh_dequeue_acf_pro_frontend_css() {
 //***************************************************************//
 
 //***************************************************************//
+// ADVANCED FORMS CALL FRONT END CSS WHEN FORM IS SET ////////////////////////////////
+// Remove form style
+function mjh_dequeue_af_frontend_css() {
+	wp_dequeue_style( 'af-form-style' );
+}
+add_action( 'wp_print_styles', 'mjh_dequeue_af_frontend_css', 100 );
+
+// Function adds the forms.css back when a form is active
+function mjh_before_title( $form, $args ) {
+	wp_enqueue_style( 'af-form-styles', plugins_url() .  '/advanced-forms/assets/css/form.css' );
+}
+add_action( 'af/form/before_title', 'mjh_before_title', 100, 2 );
+//END ADVANCED FORMS CALL FRONT END CSS WHEN FORM IS SET
+//***************************************************************//
+
+//***************************************************************//
 // CLEANUP EMAIL SENDER NAME ////////////////////////////////
 // Function to change sender name
 function mjh_sender_name( $original_email_from ) {
