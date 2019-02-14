@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5bd67ded96c5a",
-            "label": "Download Link",
+            "label": "Download link",
             "name": "download",
             "type": "file",
             "instructions": "",
@@ -40,5 +40,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1543259412
+    "modified": 1550170492
 }
