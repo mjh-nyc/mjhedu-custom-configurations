@@ -776,4 +776,10 @@ function mjh_sender_name( $original_email_from ) {
 add_filter( 'wp_mail_from_name', 'mjh_sender_name', 20 );
 //END CLEANUP EMAIL SENDER NAME
 //***************************************************************//
+
+//***************************************************************//
+// DISABLE GUTENBURG BLOCK EDITOR ////////////////////////////////
+add_filter('use_block_editor_for_post', '__return_false', 10);
+//END DISABLE GUTENBURG BLOCK EDITOR
+//***************************************************************//
 ?>
