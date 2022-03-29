@@ -782,4 +782,17 @@ add_filter( 'wp_mail_from_name', 'mjh_sender_name', 20 );
 add_filter('use_block_editor_for_post', '__return_false', 10);
 //END DISABLE GUTENBURG BLOCK EDITOR
 //***************************************************************//
+
+//***************************************************************//
+// ACF PRO OPTIONS PAGES  /////////////////////////////////////////
+function register_acf_options_pages()
+{
+    if (function_exists('acf_add_options_page')) {
+        acf_add_options_sub_page(array('page_title' => 'MJH Navigation Settings', 'menu_title' => 'MJH Navigation Settings', 'menu_slug' => 'mjh-navigation-settings', 'parent_slug' => 'options-general.php','capability' => 'manage_options', 'redirect' => false));
+    }
+}
+// Hook into acf initialization.
+add_action('acf/init', 'register_acf_options_pages');
+//END ACF PRO OPTIONS PAGES
+//***************************************************************//
 ?>
