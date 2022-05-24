@@ -106,6 +106,26 @@
             ]
         },
         {
+            "key": "field_628caa7a3c6bd",
+            "label": "Show All Lessons?",
+            "name": "show_all_lessons",
+            "type": "true_false",
+            "instructions": "Edit the header and description copy on the <a href=\"\/wp\/wp-admin\/edit.php?post_type=lessons&page=acf-options-options\">Lesson Plans options page<\/a>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Yes, show all lessons in a carousel format",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_628b3ba9f6c7e",
             "label": "Custom Carousel",
             "name": "custom_carousel",
@@ -209,7 +229,7 @@
                             "key": "field_628b3c7ff6c83",
                             "label": "Choose From Existing Content",
                             "name": "custom_carousel_section_post",
-                            "type": "relationship",
+                            "type": "post_object",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
@@ -227,16 +247,23 @@
                                 "id": ""
                             },
                             "hide_admin": 0,
-                            "post_type": "",
-                            "taxonomy": "",
-                            "filters": [
-                                "search",
-                                "post_type"
+                            "post_type": [
+                                "post",
+                                "page",
+                                "lessons",
+                                "timeline",
+                                "survivor_story",
+                                "survivor_resources",
+                                "media_resources",
+                                "artifacts",
+                                "testimony",
+                                "event"
                             ],
-                            "elements": "",
-                            "min": "",
-                            "max": "",
-                            "return_format": "id"
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "id",
+                            "ui": 1
                         },
                         {
                             "key": "field_628b3d48f6c84",
@@ -381,5 +408,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1653292775
+    "modified": 1653388368
 }
