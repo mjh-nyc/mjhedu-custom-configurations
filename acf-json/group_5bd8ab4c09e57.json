@@ -3,45 +3,10 @@
     "title": "Homepage Settings",
     "fields": [
         {
-            "key": "field_5bd8ab5262d2e",
-            "label": "Main CTA URL",
-            "name": "main_cta_url",
-            "type": "url",
-            "instructions": "Enter button URL",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_5bd8aba662d2f",
-            "label": "Main CTA Label",
-            "name": "main_cta_label",
-            "type": "text",
-            "instructions": "Enter button label",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Get Started",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5bd8acb7f8ca2",
-            "label": "Features",
-            "name": "features",
-            "type": "group",
+            "key": "field_628b2d1c44bfe",
+            "label": "Hero Area Features Collection",
+            "name": "hero_area_features_collection",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -51,124 +16,125 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "layout": "block",
+            "collapsed": "field_628b2d8444c00",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add hero area feature",
             "sub_fields": [
                 {
-                    "key": "field_5bd8acd3f8ca3",
-                    "label": "Video embed",
-                    "name": "video_embed",
-                    "type": "oembed",
+                    "key": "field_628b2d6544bff",
+                    "label": "Image",
+                    "name": "hero_area_image",
+                    "type": "image",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "100",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "hide_admin": 0,
-                    "width": "",
-                    "height": ""
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
                 },
                 {
-                    "key": "field_5bd8ad703d67d",
-                    "label": "Featured Lesson Plan",
-                    "name": "featured_lesson_plan",
-                    "type": "post_object",
+                    "key": "field_628b2d8444c00",
+                    "label": "Heading",
+                    "name": "hero_area_image_title",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "hide_admin": 0,
-                    "post_type": [
-                        "lessons"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                },
-                {
-                    "key": "field_5bfd9fef82c1c",
-                    "label": "Featured Lesson Label",
-                    "name": "featured_lesson_plan_label",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "25",
-                        "class": "",
-                        "id": ""
-                    },
-                    "hide_admin": 0,
-                    "default_value": "Featured Lesson Plan",
+                    "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": 160
+                    "maxlength": "",
+                    "rows": 7,
+                    "new_lines": ""
                 },
                 {
-                    "key": "field_5bfd9e47c8280",
-                    "label": "Button Label",
-                    "name": "featured_lesson_plan_button_label",
-                    "type": "text",
+                    "key": "field_628b2da944c01",
+                    "label": "Description (Optional)",
+                    "name": "hero_area_image_description",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "25",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "hide_admin": 0,
-                    "default_value": "View",
+                    "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": 15
+                    "maxlength": "",
+                    "rows": 7,
+                    "new_lines": ""
                 },
                 {
-                    "key": "field_5bd8ad983d67e",
-                    "label": "Custom Feature",
-                    "name": "custom_feature",
-                    "type": "post_object",
+                    "key": "field_628b2dc944c02",
+                    "label": "Button Link",
+                    "name": "hero_area_image_button_link",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "hide_admin": 0,
-                    "post_type": [
-                        "page",
-                        "lessons",
-                        "survivor_story",
-                        "event"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
+            "key": "field_628b3ba9f6c7e",
+            "label": "Custom Carousel",
+            "name": "custom_carousel",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "collapsed": "field_628b3bcef6c7f",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Custom Carousel",
+            "sub_fields": [
                 {
-                    "key": "field_5be9b6db551a3",
-                    "label": "Custom Feature Label",
-                    "name": "custom_feature_label",
+                    "key": "field_628b3bcef6c7f",
+                    "label": "Section Title",
+                    "name": "custom_carousel_section_title",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "25",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -180,162 +146,212 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5bfd9e6ec8281",
-                    "label": "Button Label",
-                    "name": "custom_feature_button_label",
-                    "type": "text",
+                    "key": "field_628b3eb4d02ef",
+                    "label": "Subtitle",
+                    "name": "custom_carousel_section_subtitle",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "25",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "hide_admin": 0,
-                    "default_value": "View",
+                    "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": 15
-                }
-            ]
-        },
-        {
-            "key": "field_5bd8af3fda82b",
-            "label": "Secondary Features",
-            "name": "secondary_features",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "collapsed": "field_5bfd861985a20",
-            "min": 0,
-            "max": 2,
-            "layout": "block",
-            "button_label": "Add Feature",
-            "sub_fields": [
-                {
-                    "key": "field_5bfd861985a20",
-                    "label": "Secondary Feature",
-                    "name": "secondary_feature",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "70",
-                        "class": "",
-                        "id": ""
-                    },
-                    "hide_admin": 0,
-                    "post_type": [
-                        "page",
-                        "event",
-                        "testimony",
-                        "artifacts",
-                        "survivor_story",
-                        "lessons"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "id",
-                    "ui": 1
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": ""
                 },
                 {
-                    "key": "field_5bfd865985a21",
-                    "label": "Button Label",
-                    "name": "secondary_feature_button_label",
-                    "type": "text",
-                    "instructions": "",
+                    "key": "field_628b3be6f6c80",
+                    "label": "Carousel Items",
+                    "name": "custom_carousel_items",
+                    "type": "repeater",
+                    "instructions": "Add items to your custom carousel. You can choose to feature existing site content or create a carousel card from scratch by checking the “Custom carousel card” checkbox below",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "30",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "hide_admin": 0,
-                    "default_value": "View",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": 15
-                }
-            ]
-        },
-        {
-            "key": "field_5be725200e169",
-            "label": "Supporting Features",
-            "name": "supporting_features",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "collapsed": "field_5be7270b0e16e",
-            "min": 0,
-            "max": 3,
-            "layout": "block",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_5be7270b0e16e",
-                    "label": "Feature",
-                    "name": "supporting_feature",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "70",
-                        "class": "",
-                        "id": ""
-                    },
-                    "hide_admin": 0,
-                    "post_type": [
-                        "page",
-                        "event",
-                        "survivor_story",
-                        "lessons"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "id",
-                    "ui": 1
-                },
-                {
-                    "key": "field_5bfd7600cd340",
-                    "label": "Button Label",
-                    "name": "supporting_feature_button_label",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "30",
-                        "class": "",
-                        "id": ""
-                    },
-                    "hide_admin": 0,
-                    "default_value": "View",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": 15
+                    "collapsed": "field_628b3d71f6c85",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "block",
+                    "button_label": "Add Carousel Item",
+                    "sub_fields": [
+                        {
+                            "key": "field_628b3c26f6c81",
+                            "label": "Custom carousel card?",
+                            "name": "custom_carousel_section_is_custom_content",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "message": "Yes, create new content that does not exist on the site",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_628b3c7ff6c83",
+                            "label": "Choose From Existing Content",
+                            "name": "custom_carousel_section_post",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_628b3c26f6c81",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "post_type": "",
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "post_type"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
+                        },
+                        {
+                            "key": "field_628b3d48f6c84",
+                            "label": "Image",
+                            "name": "custom_carousel_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_628b3c26f6c81",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_628b3d71f6c85",
+                            "label": "Title",
+                            "name": "custom_carousel_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_628b3c26f6c81",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_628b3da5f6c86",
+                            "label": "Description",
+                            "name": "custom_carousel_description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_628b3c26f6c81",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_628b3c69f6c82",
+                            "label": "Link",
+                            "name": "custom_carousel_link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_628b3c26f6c81",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "return_format": "array"
+                        }
+                    ]
                 }
             ]
         }
@@ -359,8 +375,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
+    "hide_on_screen": [
+        "the_content",
+        "discussion"
+    ],
+    "active": true,
     "description": "",
-    "modified": 1543348342
+    "modified": 1653292775
 }
