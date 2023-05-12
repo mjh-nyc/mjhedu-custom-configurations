@@ -1,8 +1,8 @@
 <?php 
 /*
-Plugin Name: Musuem of Jewish Heritage Education Custom Configurations
-Description: This plugin registers Musuem of Jewish Heritage Education custom configurations.
-Version: 1.0.0
+Plugin Name: Museum of Jewish Heritage Education Custom Configurations
+Description: This plugin registers Museum of Jewish Heritage Education custom configurations.
+Version: 1.4.4
 License: GPLv2
 */
 // set acf pro save json directory

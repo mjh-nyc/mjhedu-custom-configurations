@@ -1,0 +1,16 @@
+{
+    "name": "mjh-nyc/mjhedu-custom-configurations",
+    "description": "MJH Edu custom configurations must use plugin",
+    "keywords": ["wordpress", "plugin"],
+    "homepage": "https://github.com/mjh-nyc/mjhedu-custom-configurations",
+    "authors": [
+        {
+            "name": "Cloudred",
+            "homepage": "https://cloudred.com"
+        }
+    ],
+    "type": "wordpress-muplugin",
+    "require": {
+        "php": ">=8.0"
+    }
+}
