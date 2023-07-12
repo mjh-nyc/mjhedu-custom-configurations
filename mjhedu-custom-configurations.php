@@ -15,8 +15,6 @@ add_filter('acf/settings/load_json', function($paths) {
     $paths[] = WPMU_PLUGIN_DIR . '/mjhedu-custom-configurations/acf-json';
     return $paths;
 });
-
-
 //******************************************************************//
 // REIGSTER CUSTOM POST TYPES ////////////////////////////////////////
 function mjhedu_create_post_types() {
@@ -47,7 +45,8 @@ function mjhedu_create_post_types() {
 		'capability_type' => 'post',
 		'rewrite' => array( 'slug' => 'lessons' ),
 		'menu_position' => 5,
-        'taxonomies'  => array( 'category' )
+        'taxonomies'  => array( 'category' ),
+        "show_in_rest" => true
 		)
 	);
     //End lesson plans
@@ -78,14 +77,13 @@ function mjhedu_create_post_types() {
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'timeline/%timeline_category%', 'with_front' => false ),
         'menu_position' => 6,
-        'taxonomies'  => array( 'category' )
+        'taxonomies'  => array( 'category' ),
+        "show_in_rest" => true
         )
     );
     //Create timline taxonomy
     register_timeline_category();
     //End timeline
-
-
 
     // Register Survivor Stories content type
     $survivor_story_labels = array(
@@ -113,14 +111,13 @@ function mjhedu_create_post_types() {
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'survivor-stories', 'with_front' => false ),
         'menu_position' => 7,
-        'taxonomies'  => array( 'category' )
+        'taxonomies'  => array( 'category' ),
+        "show_in_rest" => true
         )
     );
     //Create survivor stories taxonomy, survivor story taxonomy is a list of survivors
     register_survivor_name();
     //End survivor stories
-
-
 
     //Create Survivor Resources CPT
     $survivor_resources_labels = array(
@@ -148,14 +145,13 @@ function mjhedu_create_post_types() {
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'survivor-resources/%survivors%', 'with_front' => false ),
         'menu_position' => 7,
-        'taxonomies'  => array( 'category' )
+        'taxonomies'  => array( 'category' ),
+        "show_in_rest" => true
         )
     );
     //Create survivor resources taxonomy
     register_resources_taxonomy();
     //End survivor resources CPT
-
-
 
     // Register Glossary CPT
     $glossary_labels = array(
@@ -181,11 +177,11 @@ function mjhedu_create_post_types() {
         'supports' => array( 'title', 'editor', 'custom-fields'),
         'exclude_from_search' => true,
         'capability_type' => 'post',
-        'rewrite' => array( 'slug' => 'glossary' )
+        'rewrite' => array( 'slug' => 'glossary' ),
+        "show_in_rest" => true
         )
     );
     //End glossary CPT
-
 
     // Register Media Resources (Book, Films, Websites) CPT
     $media_resources_labels = array(
@@ -211,7 +207,8 @@ function mjhedu_create_post_types() {
         'exclude_from_search' => true,
         'capability_type' => 'post',
         'show_in_menu' => 'edit.php?post_type=survivor_resources',
-        'rewrite' => array( 'slug' => 'media-resources' )
+        'rewrite' => array( 'slug' => 'media-resources' ),
+        "show_in_rest" => true
         )
     );
     register_media_resources_taxonomy();
@@ -241,10 +238,10 @@ function mjhedu_create_post_types() {
         'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail'),
         'exclude_from_search' => false,
         'capability_type' => 'post',
-        'rewrite' => array( 'slug' => 'artifacts' )
+        'rewrite' => array( 'slug' => 'artifacts' ),
+        "show_in_rest" => true
         )
     );
-
 
     // Register testimony post type
     $testimony_labels = array(
@@ -271,9 +268,9 @@ function mjhedu_create_post_types() {
         'exclude_from_search' => false,
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'testimonies' ),
+        "show_in_rest" => true
         )
     );
-
 
     // Register events
     $event_labels = array(
@@ -300,16 +297,14 @@ function mjhedu_create_post_types() {
         'exclude_from_search' => false,
         'capability_type' => 'post',
         'rewrite' => array( 'slug' => 'events' ),
+        "show_in_rest" => true
         )
     );
     register_event_category();
-
 }
 add_action( 'init', 'mjhedu_create_post_types' );
 // END CUSTOM POST TYPES ////////////////////////////////////////
 //******************************************************************//
-
-
 
 //******************************************************************//
 // CREATE CUSTOM TAXONOMIES ////////////////////////////////////////
@@ -354,7 +349,6 @@ function register_timeline_category(){
         'add_new_item'      => __( 'Add New Timeline Category', 'sage' ),
         'new_item_name'     => __( 'New Timeline Category Name', 'sage' ),
     );
-
     $args = array(
         'hierarchical'      => true,
         'labels'            => $labels,
@@ -363,7 +357,6 @@ function register_timeline_category(){
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'timeline-category' ),
     );
-
     register_taxonomy( 'timeline_category', array( 'timeline' ), $args );
 }
 
@@ -380,7 +373,6 @@ function register_survivor_name(){
         'add_new_item'      => __( 'Add Survivor', 'sage' ),
         'new_item_name'     => __( 'New Survivor Name', 'sage' ),
     );
-
     $args = array(
         'hierarchical'      => true,
         'labels'            => $labels,
@@ -389,7 +381,6 @@ function register_survivor_name(){
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'survivor' ),
     );
-
     register_taxonomy( 'survivors', array( 'survivor_story','timeline','survivor_resources' ), $args );
 }
 
@@ -406,7 +397,6 @@ function register_resources_taxonomy(){
         'add_new_item'      => __( 'Add Resource Category', 'sage' ),
         'new_item_name'     => __( 'New Resource Category', 'sage' ),
     );
-
     $args = array(
         'hierarchical'      => true,
         'labels'            => $labels,
@@ -415,7 +405,6 @@ function register_resources_taxonomy(){
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'resource-type' ),
     );
-
     register_taxonomy( 'resource_category', array( 'survivor_resources' ), $args );
 }
 
@@ -432,7 +421,6 @@ function register_media_resources_taxonomy(){
         'add_new_item'      => __( 'Add Media Category', 'sage' ),
         'new_item_name'     => __( 'New Media Category', 'sage' ),
     );
-
     $args = array(
         'hierarchical'      => true,
         'labels'            => $labels,
@@ -442,7 +430,6 @@ function register_media_resources_taxonomy(){
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'media-type' ),
     );
-
     register_taxonomy( 'media_resources_category', array( 'media_resources' ), $args );
 }
 
@@ -461,7 +448,6 @@ function register_event_category(){
         'add_new_item'      => __( 'Add New Event Category', 'sage' ),
         'new_item_name'     => __( 'New Event Category Name', 'sage' ),
     );
-
     $args = array(
         'hierarchical'      => true,
         'labels'            => $labels,
@@ -470,14 +456,11 @@ function register_event_category(){
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'event-category' ),
     );
-
     register_taxonomy( 'event_category', array( 'event' ), $args );
 }
 
 // END CUSTOM TAXONOMIES ////////////////////////////////////////
 //******************************************************************//
-
-
 
 //******************************************************************//
 // REWRITE CUSTOM POST TYPES SLUGS ///////////////////////////////////
@@ -492,7 +475,6 @@ function wpa_survivors_permalinks( $post_link, $post ){
     return $post_link;
 }
 add_filter( 'post_type_link', 'wpa_survivors_permalinks', 1, 2 );
-
 //TIMELINE
 function wpa_timeline_permalinks( $post_link, $post ){
     if ( is_object( $post ) && $post->post_type == 'timeline' ){
@@ -505,10 +487,8 @@ function wpa_timeline_permalinks( $post_link, $post ){
 }
 add_filter( 'post_type_link', 'wpa_timeline_permalinks', 1, 2 );
 
-
 // END CUSTOM POST TYPES REWRITES ///////////////////////////////////
 //******************************************************************//
-
 
 //******************************************************************//
 // ADD FILTER BY CUSTOM TAXONOMY ///////////////////////////////////
@@ -519,7 +499,6 @@ function add_filters_to_adminview( $post_type, $which ) {
          'survivor_resources' !== $post_type && 
          'media_resources' !== $post_type)
         return;
-
     switch ($post_type) {
         case 'survivor_story':
             // A list of taxonomy slugs to filter by
@@ -538,16 +517,12 @@ function add_filters_to_adminview( $post_type, $which ) {
             $taxonomies = array( 'media_resources_category' );
             break;
     }
-    
     foreach ( $taxonomies as $taxonomy_slug ) {
-
         // Retrieve taxonomy data
         $taxonomy_obj = get_taxonomy( $taxonomy_slug );
         $taxonomy_name = $taxonomy_obj->labels->name;
-
         // Retrieve taxonomy terms
         $terms = get_terms( $taxonomy_slug );
-
         // Display filter HTML
         echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
         echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $taxonomy_name ) . '</option>';
@@ -562,15 +537,11 @@ function add_filters_to_adminview( $post_type, $which ) {
         }
         echo '</select>';
     }
-
 }
 add_action( 'restrict_manage_posts', 'add_filters_to_adminview' , 10, 2);
 
 // END FILTER BY CUSTOM TAXONOMY ///////////////////////////////////
 /******************************************************************/
-
-
-
 
 //**************************************************************//
 // HIDE DEFAULT ADMIN LINKS ////////////////////////////////////////
@@ -601,8 +572,6 @@ function remove_comments() {
     remove_menu_page( 'edit-comments.php' );
 }
 //**********  //END HIDE ADMIN LINKS **************************//
-
-
 /**
  * Use radio inputs instead of checkboxes for term checklists in specified taxonomies.
  *
@@ -629,16 +598,13 @@ function wpse_139269_term_radio_checklist( $args ) {
                             array( 'type="radio"', "type='radio'" ),
                             $output
                         );
-
                         return $output;
                     }
                 }
             }
-
             $args['walker'] = new WPSE_139269_Walker_Category_Radio_Checklist;
         }
     }
-
     return $args;
 }
 
@@ -646,9 +612,6 @@ add_filter( 'wp_terms_checklist_args', 'wpse_139269_term_radio_checklist' );
 
 // END CHECKBOX TO RADIO BTN UPDATE ////////////////////////////////
 //******************************************************************//
-
-
-
 //******************************************************************//
 // HIDE PUBLISH DATE FILTERS IN ADMIN ////////////////////////////////
 add_action('admin_head', 'my_custom_admin_css');
@@ -657,22 +620,17 @@ function my_custom_admin_css() {
   echo '<style>
     .post-type-survivor_story #posts-filter .tablenav select#filter-by-date,
     .post-type-timeline #posts-filter .tablenav select#filter-by-date,
-
     .post-type-lessons #posts-filter .tablenav select#filter-by-date,
     .post-type-lessons #posts-filter .tablenav #post-query-submit,
-
     .post-type-survivor_resources #posts-filter .tablenav select#filter-by-date,
-
     .post-type-media_resources #posts-filter .tablenav select#filter-by-date
     {
         display:none;
     }
-
   </style>';
 }
 // END HIDE PUBLISH DATE FILTERS IN ADMIN ////////////////////////////////
 //******************************************************************//
-
 
 //******************************************************************//
 // REMOVE DEFAULT DASHBOARD WIDGETS ////////////////////////////////
@@ -693,26 +651,18 @@ remove_action('welcome_panel', 'wp_welcome_panel');
 //END REMOVE DASHBOARD WIDGETS
 //***************************************************************//
 
-
-
-
 //***************************************************************//
 // ADD CUSTOM DASHBOARD WIDGETS ////////////////////////////////
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
-  
 function my_custom_dashboard_widgets() {
 global $wp_meta_boxes;
- 
 wp_add_dashboard_widget('custom_help_widget', 'Welcome!', 'custom_dashboard_help');
 }
- 
 function custom_dashboard_help() {
 echo '<p>This custom theme and admin menu have been devloped by <a href="mailto:info@cloudred.com">Cloudred</a>. If you’re a developer, please see the mjhedu-custom-configurations.php file for all customization options.</p>';
 }
 //END ADD DASHBOARD WIDGETS
 //***************************************************************//
-
-
 
 //***************************************************************//
 // RENAME CATEGROIES TO THEMES ////////////////////////////////
@@ -775,12 +725,6 @@ function mjh_sender_name( $original_email_from ) {
 }
 add_filter( 'wp_mail_from_name', 'mjh_sender_name', 20 );
 //END CLEANUP EMAIL SENDER NAME
-//***************************************************************//
-
-//***************************************************************//
-// DISABLE GUTENBURG BLOCK EDITOR ////////////////////////////////
-add_filter('use_block_editor_for_post', '__return_false', 10);
-//END DISABLE GUTENBURG BLOCK EDITOR
 //***************************************************************//
 
 //***************************************************************//
