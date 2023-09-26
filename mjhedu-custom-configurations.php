@@ -739,4 +739,14 @@ function register_acf_options_pages()
 add_action('acf/init', 'register_acf_options_pages');
 //END ACF PRO OPTIONS PAGES
 //***************************************************************//
-?>
+//***************************************************************//
+// BLOCK SUBSCRIBER ROLE AUTHENTICATION  /////////////////////////////////////////
+function mjhedu_authenticate( $user, $username, $password ) {
+    if ($user instanceof WP_User && user_can($user, 'subscriber')) {
+        return new WP_Error(1, 'Login is now prohibited');
+    }
+    return $user;
+}
+add_filter( 'authenticate', 'mjhedu_authenticate', 30, 3 );
+//END BLOCK SUBSCRIBER ROLE AUTHENTICATION
+//***************************************************************//
