@@ -733,11 +733,12 @@ function register_acf_options_pages()
 {
     if (function_exists('acf_add_options_page')) {
         acf_add_options_sub_page(array('page_title' => 'MJH Navigation Settings', 'menu_title' => 'MJH Navigation Settings', 'menu_slug' => 'mjh-navigation-settings', 'parent_slug' => 'options-general.php','capability' => 'manage_options', 'redirect' => false));
+        acf_add_options_sub_page(array('page_title' => 'MJH Mailchimp Settings', 'menu_title' => 'MJH Mailchimp Settings', 'menu_slug' => 'mjh-Mailchimp-settings', 'parent_slug' => 'options-general.php','capability' => 'manage_options', 'redirect' => false));
     }
 }
 // Hook into acf initialization.
 add_action('acf/init', 'register_acf_options_pages');
-//END ACF PRO OPTIONS PAGES
+//END AF PRO OPTIONS PAGES
 //***************************************************************//
 //***************************************************************//
 // BLOCK SUBSCRIBER ROLE AUTHENTICATION  /////////////////////////////////////////
