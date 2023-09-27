@@ -5,6 +5,8 @@ Description: This plugin registers Museum of Jewish Heritage Education custom co
 Version: 1.4.4
 License: GPLv2
 */
+//Load ACF Math Captcha Field
+include_once __DIR__ . '/acf-math-captcha/init.php';
 // set acf pro save json directory
 add_filter('acf/settings/save_json', function($path) {
     return WPMU_PLUGIN_DIR . '/mjhedu-custom-configurations/acf-json';
@@ -740,6 +742,59 @@ function register_acf_options_pages()
 add_action('acf/init', 'register_acf_options_pages');
 //END AF PRO OPTIONS PAGES
 //***************************************************************//
+// AF FORM OVERRIDES  /////////////////////////////////////////
+//Check for redirects for all af form and set them up. For security, using postIds as parameters
+function mjhedu_af_form_filter_args( $args, $form ) {
+    if(!empty($_REQUEST['redirect_to'])){
+        $post_id = (int)$_REQUEST['redirect_to'];
+        $redirect = get_permalink($post_id);
+        if(!empty($redirect)){
+            $args['redirect'] = $redirect;
+        }
+    }
+    return $args;
+}
+add_filter( 'af/form/args', 'mjhedu_af_form_filter_args', 10, 2 );
+//Intercept AF Form submission signup access
+function mjhedu_af_form_submission( $form, $field, $args ) {
+    //Subscribe user to Mailchimp list
+    //Get api keys and list id
+    $api_key = get_field('mailchimp_api_key', 'option');
+    $list_id = get_field('mailchimp_list_id', 'option');
+    //Get email and generate subscriber hash based on email per Mailchimp spec
+    $email = af_get_field( 'signup_access_email' );
+    $subscriber_hash = md5(strtolower($email));
+    //Instantiate mailchimp class
+    $mailchimp = new MailchimpMarketing\ApiClient();
+    $mailchimp->setConfig([
+        'apiKey' => $api_key,
+        'server' => substr($api_key,strpos($api_key,'-')+1)
+    ]);
+    //Insert/Update user signup information
+    try {
+        $response = $mailchimp->lists->updateListMember($list_id,$subscriber_hash, [
+            "email_address" => $email,
+            "status" => "subscribed",
+            "merge_fields" => [
+                "FNAME" => af_get_field( 'signup_access_first_name' ),
+                "LNAME" => af_get_field( 'signup_access_last_name' ),
+            ]
+        ], ["skip_merge_validation" => true]);
+    } catch (GuzzleHttp\Exception\ClientException $e) {
+        error_log($e->getMessage());
+    }
+    //If response ok, attempt to set cookie
+    if( !empty($response) && !empty($response->email_address) ) {
+        if(!isset($_COOKIE['mjhedu_signed_up'])) {
+            //Set cookie for 1 year
+            setcookie('mjhedu_signed_up', true, strtotime('+1year'),'/');
+        }
+    }
+}
+add_action( 'af/form/submission/key=form_65125b9a104e2', 'mjhedu_af_form_submission', 10, 3 );
+//END AF FORM OVERRIDES
+//***************************************************************//
+
 //***************************************************************//
 // BLOCK SUBSCRIBER ROLE AUTHENTICATION  /////////////////////////////////////////
 function mjhedu_authenticate( $user, $username, $password ) {
