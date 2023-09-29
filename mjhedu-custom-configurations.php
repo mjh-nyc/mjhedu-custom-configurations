@@ -764,26 +764,40 @@ function mjhedu_af_form_submission( $form, $field, $args ) {
     //Get email and generate subscriber hash based on email per Mailchimp spec
     $email = af_get_field( 'signup_access_email' );
     $subscriber_hash = md5(strtolower($email));
+    //Setup data
+    $add_user = false;
+    $dataHash = [
+        "email_address" => $email,
+        "status" => "subscribed",
+        "merge_fields" => [
+            "FNAME" => af_get_field( 'signup_access_first_name' ),
+            "LNAME" => af_get_field( 'signup_access_last_name' ),
+        ]
+    ];
     //Instantiate mailchimp class
     $mailchimp = new MailchimpMarketing\ApiClient();
     $mailchimp->setConfig([
         'apiKey' => $api_key,
         'server' => substr($api_key,strpos($api_key,'-')+1)
     ]);
+    //Attempt to get member information from Mailchimp
+    try {
+        $mailchimp->lists->getListMember($list_id, $subscriber_hash, $fields = null, $exclude_fields = null);
+    } catch (GuzzleHttp\Exception\ClientException $e) {
+        //If api call fails, it means user email is not in mailchimp, so we add it
+        $add_user = true;
+    }
     //Insert/Update user signup information
     try {
-        $response = $mailchimp->lists->updateListMember($list_id,$subscriber_hash, [
-            "email_address" => $email,
-            "status" => "subscribed",
-            "merge_fields" => [
-                "FNAME" => af_get_field( 'signup_access_first_name' ),
-                "LNAME" => af_get_field( 'signup_access_last_name' ),
-            ]
-        ], ["skip_merge_validation" => true]);
+        if(!empty($add_user)){
+            $response = $mailchimp->lists->addListMember($list_id,$dataHash,["skip_merge_validation" => true]);
+        }else{
+            $response = $mailchimp->lists->updateListMember($list_id,$subscriber_hash, $dataHash , ["skip_merge_validation" => true]);
+        }
     } catch (GuzzleHttp\Exception\ClientException $e) {
         error_log($e->getMessage());
     }
-    //If response ok, attempt to set cookie
+    //If upsert response ok, attempt to set cookie
     if( !empty($response) && !empty($response->email_address) ) {
         if(!isset($_COOKIE['mjhedu_signed_up'])) {
             //Set cookie for 1 year
