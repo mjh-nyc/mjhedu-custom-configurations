@@ -149,7 +149,7 @@ class cr_acf_field_math_captcha extends \acf_field {
      *
      * @return int
      */
-    private function getRandomNumber( $min=1, $max=30){
+    private function getRandomNumber( $min=1, $max=10){
         return rand( $min, $max );
     }
     /**
