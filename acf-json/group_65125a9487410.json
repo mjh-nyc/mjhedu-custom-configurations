@@ -66,7 +66,7 @@
         },
         {
             "key": "field_65125b4ef7856",
-            "label": "Zip Code",
+            "label": "Zip\/Postal Code",
             "name": "signup_access_zip_code",
             "aria-label": "",
             "type": "text",
@@ -142,5 +142,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695823930
+    "modified": 1695946249
 }
