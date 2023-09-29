@@ -772,6 +772,7 @@ function mjhedu_af_form_submission( $form, $field, $args ) {
         "merge_fields" => [
             "FNAME" => af_get_field( 'signup_access_first_name' ),
             "LNAME" => af_get_field( 'signup_access_last_name' ),
+            "ZIP" => af_get_field( 'signup_access_zip_code' ),
         ]
     ];
     //Instantiate mailchimp class
